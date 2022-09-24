@@ -7,6 +7,9 @@ if (key_exists('login', $_SESSION) && $_SESSION['login']) {
     $id = $_SESSION['login'];
     $data = mysqli_fetch_assoc(mysqli_query($connect, "select * from `users` where `id` = '$id'"));
 }
+else{
+    header('location: /register');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
